@@ -26,7 +26,8 @@ try:
         trust_remote_code=True,
     )
     # Use Model CPU Offload for standard stability.
-    pipe.enable_model_cpu_offload()
+    # pipe.enable_model_cpu_offload()
+    pipe.to("cuda")
     print("--> [Init] Model loaded. Callback Fixed.")
 except Exception as e:
     print(f"CRITICAL ERROR: {e}")
@@ -185,7 +186,7 @@ css = """
 with gr.Blocks(title="GLM-Image Studio", theme=gr.themes.Soft(), css=css) as demo:
 
     gr.Markdown("# 🎨 GLM-Image Studio")
-    gr.Markdown("Hybrid Txt2Img & Img2Img Engine on AMD Radeon 7900 XTX")
+    gr.Markdown("Hybrid Txt2Img & Img2Img Engine on AMD Strix Halo")
 
     with gr.Row():
         with gr.Column(scale=4):

@@ -23,7 +23,7 @@ fi
 PY_ARGS="$@"
 
 echo "=================================================="
-echo "   GLM-Image Generator (AMD 7900 XTX)"
+echo "   GLM-Image Generator (AMD Strix Halo)"
 echo "=================================================="
 
 docker run --rm -it \
@@ -34,7 +34,7 @@ docker run --rm -it \
   --device=/dev/kfd --device=/dev/dri \
   --group-add=video $RENDER_ARG \
   -e HIP_VISIBLE_DEVICES=0 \
-  -e HSA_OVERRIDE_GFX_VERSION=11.0.0 \
+  -e TORCH_ROCM_AOTRITON_ENABLE_EXPERIMENTAL=1 \
   -v "$HF_CACHE_DIR":/root/.cache/huggingface \
   -v "$OUTPUT_DIR":/app/outputs \
   -v "$(pwd)/$SCRIPT_TO_RUN":/app/$SCRIPT_TO_RUN \

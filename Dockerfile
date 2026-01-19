@@ -1,7 +1,7 @@
-FROM rocm/pytorch:rocm6.4.1_ubuntu24.04_py3.12_pytorch_release_2.7.1
+FROM rocm/pytorch:rocm7.1_ubuntu24.04_py3.12_pytorch_release_2.9.1
 
 ENV ROCM_HOME=/opt/rocm
-ENV PYTORCH_ROCM_ARCH="gfx1100"
+ENV PYTORCH_ROCM_ARCH="gfx1151"
 ENV TORCH_BLAS_PREFER_HIPBLASLT=1
 
 WORKDIR /app

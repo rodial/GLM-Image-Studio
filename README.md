@@ -6,12 +6,12 @@
 ![Status](https://img.shields.io/badge/Status-Stable-green)
 
 A fully containerized, optimized Web UI to run the **GLM-Image** model (16B parameters) on **AMD GPUs** using ROCm. 
-Specifically tested and optimized for the **Radeon RX 7900 XTX (24GB)**.
+Specifically tested and optimized for the **Radeon Strix Halo gfx1151**.
 
 ## ✨ Features
 
 - **AMD ROCm Support:** Built on `rocm/pytorch` with critical fixes for BFloat16 and Apex conflicts.
-- **Hybrid Memory Management:** Custom sequential offloading pipeline enabling the massive 16B model to run on 24GB VRAM without OOM crashes.
+- ~~Hybrid Memory Management:** Custom sequential offloading pipeline enabling the massive 16B model to run on 24GB VRAM without OOM crashes~~ Full load to VRAM, need 39+GB.
 - **Robust Web UI (Gradio):**
   - **Text-to-Image & Image-to-Image:** Seamless mode switching.
   - **Reactive Controls:** Sliders automatically adjust to maintain aspect ratios.
@@ -23,7 +23,7 @@ Specifically tested and optimized for the **Radeon RX 7900 XTX (24GB)**.
 ## 🛠️ Prerequisites
 
 - **OS:** Linux (Arch/Manjaro recommended).
-- **GPU:** AMD Radeon GPU (RDNA3 / 7900 XTX recommended) with ROCm drivers.
+- **GPU:** AMD Radeon GPU (RDNA3.5 / gfx1151) with ROCm drivers.
 - **Software:** Docker installed and configured with appropriate permissions.
 - **RAM:** At least 32GB System RAM recommended for model offloading.
 
