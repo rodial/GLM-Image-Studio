@@ -22,12 +22,12 @@ except ImportError:
 try:
     pipe = PipelineClass.from_pretrained(
         MODEL_ID,
-        torch_dtype=torch.bfloat16,
+        torch_dtype=torch.float16,
         trust_remote_code=True,
+        device_map="cuda",
     )
     # Use Model CPU Offload for standard stability.
     # pipe.enable_model_cpu_offload()
-    pipe.to("cuda")
     print("--> [Init] Model loaded. Callback Fixed.")
 except Exception as e:
     print(f"CRITICAL ERROR: {e}")
